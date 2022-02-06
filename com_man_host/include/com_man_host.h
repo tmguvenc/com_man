@@ -1,6 +1,7 @@
 #ifndef COM_MAN_HOST_COM_MAN_HOST_H_
 #define COM_MAN_HOST_COM_MAN_HOST_H_
 
+#include "common.h"
 #include "type_traits.h"
 
 namespace com_man {
@@ -19,20 +20,18 @@ class ComManHost {
 
   [[nodiscard]] OpResult Init() noexcept { return device_.Init(); }
 
-  [[nodiscard]] OpResult Start() noexcept {
-    
+  [[nodiscard]] OpResult Start() noexcept { return {}; }
+
+  [[nodiscard]] OpResult Stop() noexcept { return {}; }
+
+  [[nodiscard]] OpResult SendTo(int fd, const char* buffer,
+                                const size_t len) noexcept {
+    return {};
   }
 
-  [[nodiscard]] OpResult Stop() noexcept {
-    
-  }
-
-  [[nodiscard]] OpResult SendTo(int fd, const char* buffer, const size_t len) noexcept {
-
-  }
-
-  [[nodiscard]] OpResult SendToAll(const char* buffer, const size_t len) noexcept {
-
+  [[nodiscard]] OpResult SendToAll(const char* buffer,
+                                   const size_t len) noexcept {
+    return {};
   }
 
   ComManHost(const ComManHost&) = delete;

@@ -17,7 +17,7 @@ struct is_device<T, void_t<decltype(std::declval<T>().Init()),
     : std::true_type {};
 
 template <typename T>
-using is_device_v = is_device<T>::value;
+constexpr bool is_device_v = is_device<T>::value;
 
 template <typename T, typename = void>
 struct is_message_handler : std::false_type {};
@@ -27,7 +27,7 @@ struct is_message_handler<T, void_t<decltype(std::declval<T>().Execute())>>
     : std::true_type {};
 
 template <typename T>
-using is_message_handler_v = is_message_handler<T>::value;
+constexpr bool is_message_handler_v = is_message_handler<T>::value;
 
 }  // namespace com_man
 

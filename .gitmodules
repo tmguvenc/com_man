@@ -1,0 +1,3 @@
+[submodule "lib/channels"]
+	path = lib/channels
+	url = git@github.com:tmguvenc/channels.git

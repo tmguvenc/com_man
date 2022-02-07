@@ -13,6 +13,7 @@ set (COM_MAN_HOST_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../include PARENT_SCOP
 
 include_directories(include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../com_man_common/include)
+include_directories(${CHANNELS_LIB_INCLUDE_DIR})
 
 add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
 target_link_libraries(${PROJECT_NAME} channels)
